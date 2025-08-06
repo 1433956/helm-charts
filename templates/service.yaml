@@ -8,9 +8,9 @@ spec:
 
   type: LoadBalancer
   selector:
-    purpose: deployment-demo
+    purpose: deploy-demo
     project: roboshop
-    app: nginx
+    app: web
   ports:
     - protocol: TCP
       port: 80

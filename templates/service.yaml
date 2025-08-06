@@ -4,18 +4,13 @@ metadata:
   name: nginx-lb
   labels:
     purpose: service-lb-demo
-spec: 
-
+spec:
   type: LoadBalancer
   selector:
-    purpose: deploy-demo
+    purpose: deployment-demo
     project: roboshop
-    app: web
+    app: nginx
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: {{ .Values.service.targetPort }}
-
-
-
-
+      port: 80 # service port
+      targetPort: {{ .Values.service.targetPort }} # container port

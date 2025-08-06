@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  purpose: nginx-lb
+  name: nginx-lb
   labels:
     purpose: service-lb-demo
 spec: 

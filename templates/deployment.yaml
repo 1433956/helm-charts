@@ -1,0 +1,25 @@
+apiVersion: v1
+Kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    purpose: deploy-demo
+    project: roboshop
+    app: web
+spec:
+  replica: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels: 
+      purpose: deploy-demo
+      project: roboshop
+      app: web
+  template:
+    metadata:
+      labels: 
+        purpose: deploy-demo
+        project: roboshop
+        app: web
+    spec:
+    - name: nginx
+      image: nginx:{{ .Values.deployment.imageVersion }}
+      
